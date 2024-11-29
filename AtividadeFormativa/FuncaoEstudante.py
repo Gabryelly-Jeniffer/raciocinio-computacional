@@ -6,7 +6,7 @@ def cadastrar_estudante (lista):
     cpf = input("Por favorr digite o CPF do estudante: ")
 
     dicionario_estudantes = {
-       "cod_est": codigo,
+       "codigo_estudante": codigo,
        "nome": nome,
        "cpf": cpf
     }

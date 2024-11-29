@@ -9,10 +9,10 @@ import FuncaoDisciplina as fun_disciplina
 import FuncaoTurmas as fun_turma
 import FuncaoMatriculas as fun_matricula
 
-estudantes = []
+estudantes = [{"codigo_estudante": 1, "nome": "Gabryelly", "cpf": "123"}, {"codigo_estudante": 2, "nome": "Joao", "cpf": "456"}, {"codigo_estudante": 3, "nome": "Maria", "cpf": "789"}]
 professores = []
 disciplinas = []
-turmas = []
+turmas = [{"codigo_turma": 1, "codigo_professor": 1, "codigo_disciplina": 1}, {"codigo_turma": 2, "codigo_professor": 2, "codigo_disciplina": 2}, {"codigo_turma": 3, "codigo_professor": 3, "codigo_disciplina": 3}]
 matriculas = []
 
 
@@ -63,7 +63,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         elif numero == 2:
                               fun_matricula.excluir_matricula(matriculas)
                         elif numero == 3:
-                              print("EM DESENVOLVIMENTO\n")
+                              fun_matricula.criar_matricula(matriculas, estudantes, turmas)
                         elif numero == 4:
                               if not len(matriculas):
                                     print("Não há turmas cadastrados\n")

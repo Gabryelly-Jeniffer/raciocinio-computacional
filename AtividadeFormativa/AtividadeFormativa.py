@@ -5,6 +5,7 @@
 import FuncaoMenu as fun
 import FuncaoEstudante as fun_estudante
 import FuncaoProfessor as fun_professor
+import FuncaoDisciplina as fun_disciplina
 
 
 estudantes = []
@@ -38,7 +39,21 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                               break
 
             case "B":
-                  print("EM DESENVOLVIMENTO\n")
+                  while True:
+                        numero = fun.menu_secundario("Disciplinas")
+                        if numero == 1:
+                              fun_disciplina.editar_disciplina(disciplinas)
+                        elif numero == 2:
+                              fun_disciplina.excluir_disciplina(disciplinas)
+                        elif numero == 3:
+                              fun_disciplina.cadastrar_disciplina(disciplinas)
+                        elif numero == 4:
+                              if not len(disciplinas):
+                                    print("Não há disciplinas cadastrados\n")
+                              else:
+                                    fun_disciplina.listar_disciplina(disciplinas)
+                        elif numero == 5:
+                              break
             case "C":
                   print("EM DESENVOLVIMENTO\n")
             case "D":

@@ -6,7 +6,8 @@ import FuncaoMenu as fun
 import FuncaoEstudante as fun_estudante
 import FuncaoProfessor as fun_professor
 import FuncaoDisciplina as fun_disciplina
-
+import FuncaoTurmas as fun_turma
+import FuncaoMatriculas as fun_matricula
 
 estudantes = []
 professores = []
@@ -55,7 +56,21 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         elif numero == 5:
                               break
             case "C":
-                  print("EM DESENVOLVIMENTO\n")
+                  while True:
+                        numero = fun.menu_secundario("Matrículas")
+                        if numero == 1:
+                              print("EM DESENVOLVIMENTO\n")
+                        elif numero == 2:
+                              fun_matricula.excluir_matricula(matriculas)
+                        elif numero == 3:
+                              print("EM DESENVOLVIMENTO\n")
+                        elif numero == 4:
+                              if not len(matriculas):
+                                    print("Não há turmas cadastrados\n")
+                              else:
+                                    fun_matricula.listar_matricula(matriculas)
+                        elif numero == 5:
+                              break
             case "D":
                   while True:
                         numero = fun.menu_secundario("Professor")
@@ -73,7 +88,21 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         elif numero == 5:
                               break
             case "E":
-                  print("EM DESENVOLVIMENTO\n")
+                  while True:
+                        numero = fun.menu_secundario("Turmas")
+                        if numero == 1:
+                              print("EM DESENVOLVIMENTO\n")
+                        elif numero == 2:
+                              fun_turma.excluir_turma(turmas)
+                        elif numero == 3:
+                              print("EM DESENVOLVIMENTO\n")
+                        elif numero == 4:
+                              if not len(turmas):
+                                    print("Não há turmas cadastrados\n")
+                              else:
+                                    fun_turma.listar_turma(turmas)
+                        elif numero == 5:
+                              break
             case _:
                   print("EM DESENVOLVIMENTO\n")
 

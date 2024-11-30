@@ -1,3 +1,6 @@
+#Aluna: Gabryelly Jeniffer
+#Disciplia: Raciociono Computacional
+
 
 def cadastrar_professor (lista):
     print("===== INCLUSÃO =====")
@@ -19,15 +22,6 @@ def listar_professor (lista):
     for professor in lista:
         print(professor)
     input('Pressione ENTER para continuar\n')
-
-def excluir_professor (lista):
-    print("===== EXCLUSÃO =====")
-    codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
-    for professor in lista:
-        if professor["codigo_professor"] == codigo_para_excluir:
-            print("Estamos prontos para remover esse professor.")
-            lista.remove(professor)
-            input('Pressione ENTER para continuar\n')
 
 
 def editar_professor (lista):

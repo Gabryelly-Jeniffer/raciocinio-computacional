@@ -1,3 +1,5 @@
+#Aluna: Gabryelly Jeniffer
+#Disciplia: Raciociono Computacional
 
 def cadastrar_disciplina (lista):
     print("===== INCLUSÃO =====")
@@ -17,15 +19,6 @@ def listar_disciplina (lista):
     for disciplina in lista:
         print(disciplina)
     input('Pressione ENTER para continuar\n')
-
-def excluir_disciplina (lista):
-    print("===== EXCLUSÃO =====")
-    codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
-    for disciplina in lista:
-        if disciplina["codigo_disciplina"] == codigo_para_excluir:
-            print("Estamos prontos para remover essa disciplina.")
-            lista.remove(disciplina)
-            input('Pressione ENTER para continuar\n')
 
 
 def editar_disciplina (lista):

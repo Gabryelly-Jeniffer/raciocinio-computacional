@@ -2,7 +2,7 @@
 #Disciplia: Raciociono Computacional
 
 # Importando as funções criadas na atividade formativa
-import FuncaoMenu as fun
+import FuncaoUtil as fun
 import FuncaoEstudante as fun_estudante
 import FuncaoProfessor as fun_professor
 import FuncaoDisciplina as fun_disciplina
@@ -13,7 +13,7 @@ estudantes = [{"codigo_estudante": 1, "nome": "Gabryelly", "cpf": "123"}, {"codi
 professores = [{"codigo_professor": 1, "nome": "Joao", "cpf": "123"}, {"codigo_professor": 2, "nome": "Maria", "cpf": "456"}, {"codigo_professor": 3, "nome": "Pedro", "cpf": "789"}]
 disciplinas = [{"codigo_disciplina": 1, "nome": "Matematica", "codigo_professor": 1}, {"codigo_disciplina": 2, "nome": "Portugues", "codigo_professor": 2}, {"codigo_disciplina": 3, "nome": "Ingles", "codigo_professor": 3}]
 turmas = [{"codigo_turma": 1, "codigo_professor": 1, "codigo_disciplina": 1}, {"codigo_turma": 2, "codigo_professor": 2, "codigo_disciplina": 2}, {"codigo_turma": 3, "codigo_professor": 3, "codigo_disciplina": 3}]
-matriculas = []
+matriculas = [{"codigo_matricula": 1, "codigo_estudante": 1, "codigo_turma": 1}, {"codigo_matricula": 2, "codigo_estudante": 2, "codigo_turma": 2}, {"codigo_matricula": 3, "codigo_estudante": 3, "codigo_turma": 3}]
 
 
 
@@ -28,7 +28,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         if numero == 1:
                               fun_estudante.editar_estudante(estudantes)
                         elif numero == 2:
-                              fun_estudante.excluir_estudante(estudantes)
+                              fun.excluir_item(estudantes, "codigo_estudante")
                         elif numero == 3:
                               fun_estudante.cadastrar_estudante(estudantes)
                         elif numero == 4:
@@ -45,7 +45,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         if numero == 1:
                               fun_disciplina.editar_disciplina(disciplinas)
                         elif numero == 2:
-                              fun_disciplina.excluir_disciplina(disciplinas)
+                              fun.excluir_item(disciplinas, "codigo_disciplina")
                         elif numero == 3:
                               fun_disciplina.cadastrar_disciplina(disciplinas)
                         elif numero == 4:
@@ -59,9 +59,9 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                   while True:
                         numero = fun.menu_secundario("Matrículas")
                         if numero == 1:
-                              print("EM DESENVOLVIMENTO\n")
+                              fun_matricula.editar_matricula(matriculas, estudantes, turmas)
                         elif numero == 2:
-                              fun_matricula.excluir_matricula(matriculas)
+                              fun.excluir_item(matriculas, "codigo_matricula")
                         elif numero == 3:
                               fun_matricula.criar_matricula(matriculas, estudantes, turmas)
                         elif numero == 4:
@@ -77,7 +77,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         if numero == 1:
                               fun_professor.editar_professor(professores)
                         elif numero == 2:
-                              fun_professor.excluir_professor(professores)
+                              fun.excluir_item(professores, "codigo_professor")
                         elif numero == 3:
                               (fun_professor.cadastrar_professor(professores))
                         elif numero == 4:
@@ -93,7 +93,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         if numero == 1:
                               print("EM DESENVOLVIMENTO\n")
                         elif numero == 2:
-                              fun_turma.excluir_turma(turmas)
+                              fun.excluir_item(turmas, "codigo_turma")
                         elif numero == 3:
                               fun_turma.criar_turma(turmas, professores, disciplinas)
                         elif numero == 4:

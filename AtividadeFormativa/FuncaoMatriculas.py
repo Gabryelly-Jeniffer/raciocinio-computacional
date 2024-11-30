@@ -1,3 +1,5 @@
+#Aluna: Gabryelly Jeniffer
+#Disciplia: Raciociono Computacional
 
 
 def listar_matricula(lista):
@@ -6,15 +8,6 @@ def listar_matricula(lista):
         print(matricula)
     input('Pressione ENTER para continuar\n')
 
-def excluir_matricula (lista):
-    print("===== EXCLUSÃO =====")
-    codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
-    for matricula in lista:
-        if matricula["codigo_matricula"] == codigo_para_excluir:
-            print("Estamos prontos para remover essa Matricula.")
-            lista.remove(matricula)
-            input('Pressione ENTER para continuar\n')
-            return
 
 """
 Cria uma matricula em uma turma.
@@ -55,19 +48,48 @@ def criar_matricula (lista, estudantes, turmas):
     input('Pressione ENTER para continuar\n')
 
 
+def editar_matricula (lista, estudantes, turmas):
+    print("===== EDIÇÃO =====")
+    codigo_matricula = int(input("Qual é o codigo que deseja alterar?"))
+    for matricula in lista:
+        if matricula["codigo_matricula"] == codigo_matricula:
 
-"""
-Procura um item em uma lista de informacoes.
+            cod_matricula = int(input("Por favor, digite o código da Matricula: "))
+            turma = int(input("Por favor, digite o código da Turma: "))
+            estudante = int(input("Por favor, digite o código da Estudante: "))
 
-Args:
-    item (int): O item a ser procurado.
-    item_procura (str): O nome da chave do dicionario que sera usada para a busca.
-    lista_informacoes (list): A lista de informacoes que sera procurada.
+            if procurar_item(estudante,"codigo_estudante",estudantes) == None:
+                print("Estudante nao cadastrado")
+                return
+            if procurar_item(turma, "codigo_turma", turmas) == None:
+                print("Turma nao cadastrada")
+                return
+            if procurar_item(cod_matricula, "codigo_matricula", lista) != None:
+                print("Codigo da Matricula já cadastrada!")
+                return
 
-Returns:
-    dict: O dicionario que contem o item procurado, caso ele seja encontrado.
-"""
+            matricula["codigo_matricula"] = (cod_matricula)
+            matricula["codigo_turma"] = turma
+            matricula["codigo_estudante"] = estudante
+            break
+    input('Pressione ENTER para continuar\n')
+
+
 def procurar_item(item, item_procura, lista_informacoes):
+    """
+    Procura um item em uma lista de informacoes.
+
+    Args:
+        item (int): O item a ser procurado.
+        item_procura (str): O nome da chave do dicionario que sera usada para a busca.
+        lista_informacoes (list): A lista de informacoes que sera procurada.
+
+    Returns:
+        dict: O dicionario que contem o item procurado, caso ele seja encontrado.
+    """
     for resultado in lista_informacoes:
         if resultado[item_procura] == item:
             return resultado
+
+
+

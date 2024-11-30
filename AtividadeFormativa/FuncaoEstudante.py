@@ -1,3 +1,5 @@
+#Aluna: Gabryelly Jeniffer
+#Disciplia: Raciociono Computacional
 
 def cadastrar_estudante (lista):
     print("===== INCLUSÃO =====")
@@ -19,15 +21,6 @@ def listar_estudantes (lista):
     for estudante in lista:
         print(estudante)
     input('Pressione ENTER para continuar\n')
-
-def excluir_estudante (lista):
-    print("===== EXCLUSÃO =====")
-    codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
-    for estudante in lista:
-        if estudante["codigo_estudante"] == codigo_para_excluir:
-            print("Estamos prontos para remover esse estudante.")
-            lista.remove(estudante)
-            input('Pressione ENTER para continuar\n')
 
 
 def editar_estudante (lista):

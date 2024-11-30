@@ -1,3 +1,5 @@
+#Aluna: Gabryelly Jeniffer
+#Disciplia: Raciociono Computacional
 
 def listar_turma (lista):
     print("===== LISTAR =====")
@@ -5,14 +7,6 @@ def listar_turma (lista):
         print(turma)
     input('Pressione ENTER para continuar\n')
 
-def excluir_turma (lista):
-    print("===== EXCLUSÃO =====")
-    codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
-    for turma in lista:
-        if turma["codigo_turma"] == codigo_para_excluir:
-            print("Estamos prontos para remover essa Turma.")
-            lista.remove(turma)
-            input('Pressione ENTER para continuar\n')
 
 def criar_turma (lista, professores, disciplinas):
 

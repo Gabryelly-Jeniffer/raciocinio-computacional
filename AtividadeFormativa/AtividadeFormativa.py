@@ -91,7 +91,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                   while True:
                         numero = fun.menu_secundario("Turmas")
                         if numero == 1:
-                              print("EM DESENVOLVIMENTO\n")
+                              fun_turma.editar_turma(turmas, professores, disciplinas)
                         elif numero == 2:
                               fun.excluir_item(turmas, "codigo_turma")
                         elif numero == 3:

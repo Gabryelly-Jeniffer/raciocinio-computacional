@@ -67,10 +67,10 @@ def editar_turma(turmas, professores, disciplinas):
             if procurar_item(professor,"codigo_professor",professores) == None:
                 print("Professor nao cadastrado")
                 return
-            if procurar_item(cod_turma, "codigo_turma", turmas) != None:
+            if procurar_item(cod_turma, "codigo_turma", turmas) == None:
                 print("Turma nao cadastrada")
                 return
-            if procurar_item(disciplina, "codigo_disciplina", disciplinas) == None:
+            if procurar_item(disciplina, "codigo_disciplina", disciplinas) != None:
                 print("Codigo da disciplina já cadastrada!")
                 return
 

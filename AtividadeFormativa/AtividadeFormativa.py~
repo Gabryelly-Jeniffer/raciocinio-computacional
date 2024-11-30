@@ -95,7 +95,7 @@ while opcao== "A" or opcao == "B" or opcao == "C" or opcao == "D" or opcao =="E"
                         elif numero == 2:
                               fun_turma.excluir_turma(turmas)
                         elif numero == 3:
-                              fun_turma.criar_turma(turmas, professores, disciplinas)
+                              fun_turma.criar_turma(turmas)
                         elif numero == 4:
                               if not len(turmas):
                                     print("Não há turas cadastrados\n")

@@ -24,7 +24,7 @@ def excluir_estudante (lista):
     print("===== EXCLUSÃO =====")
     codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
     for estudante in lista:
-        if estudante["cod_est"] == codigo_para_excluir:
+        if estudante["codigo_estudante"] == codigo_para_excluir:
             print("Estamos prontos para remover esse estudante.")
             lista.remove(estudante)
             input('Pressione ENTER para continuar\n')
@@ -34,8 +34,8 @@ def editar_estudante (lista):
     print("===== EDIÇÃO =====")
     codigo_para_editar = int(input("Qual é o codigo que deseja editar?"))
     for estudante in lista:
-        if estudante["cod_est"] == codigo_para_editar:
-            estudante["cod_est"] = int(input("Digite o novo código:"))
+        if estudante["codigo_estudante"] == codigo_para_editar:
+            estudante["codigo_estudante"] = int(input("Digite o novo código:"))
             estudante["nome"] = (input("Digite o novo nome:"))
             estudante["cpf"] = (input("Digite o novo CPF:"))
             input('Pressione ENTER para continuar\n')

@@ -10,13 +10,25 @@ def excluir_matricula (lista):
     print("===== EXCLUSÃO =====")
     codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
     for matricula in lista:
-        if matricula["cod_est"] == codigo_para_excluir:
+        if matricula["codigo_matricula"] == codigo_para_excluir:
             print("Estamos prontos para remover essa Matricula.")
             lista.remove(matricula)
             input('Pressione ENTER para continuar\n')
             return
 
+"""
+Cria uma matricula em uma turma.
+
+Args:
+    lista (list): A lista que sera adicionada a matricula.
+    estudantes (list): A lista de estudantes cadastrados.
+    turmas (list): A lista de turmas cadastradas.
+
+Returns:
+    None
+"""
 def criar_matricula (lista, estudantes, turmas):
+
     print("===== INCLUSÃO =====")
     matricula = int(input("Por favor, digite o código da Matricula: "))
     turma = int(input("Por favor, digite o código da Turma: "))
@@ -27,6 +39,10 @@ def criar_matricula (lista, estudantes, turmas):
         return
     if procurar_item(turma, "codigo_turma", turmas) == None:
         print("Turma nao cadastrada")
+        return
+
+    if procurar_item(matricula, "codigo_matricula", lista) !=None:
+        print("Matricula já cadastrada!")
         return
 
     dicionario_matricula = {

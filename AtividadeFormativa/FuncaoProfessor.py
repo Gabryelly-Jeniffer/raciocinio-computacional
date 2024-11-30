@@ -6,7 +6,7 @@ def cadastrar_professor (lista):
     cpf = input("Por favorr digite o CPF do professor: ")
 
     dicionario_professor = {
-       "cod_est": codigo,
+       "codigo_professor": codigo,
        "nome": nome,
        "cpf": cpf
     }
@@ -24,7 +24,7 @@ def excluir_professor (lista):
     print("===== EXCLUSÃO =====")
     codigo_para_excluir = int(input("Qual é o codigo que deseja excluir?"))
     for professor in lista:
-        if professor["cod_est"] == codigo_para_excluir:
+        if professor["codigo_professor"] == codigo_para_excluir:
             print("Estamos prontos para remover esse professor.")
             lista.remove(professor)
             input('Pressione ENTER para continuar\n')
@@ -34,8 +34,8 @@ def editar_professor (lista):
     print("===== EDIÇÃO =====")
     codigo_para_editar = int(input("Qual é o codigo que deseja editar?"))
     for professor in lista:
-        if professor["cod_est"] == codigo_para_editar:
-            professor["cod_est"] = int(input("Digite o novo código:"))
+        if professor["codigo_professor"] == codigo_para_editar:
+            professor["codigo_professor"] = int(input("Digite o novo código:"))
             professor["nome"] = (input("Digite o novo nome:"))
             professor["cpf"] = (input("Digite o novo CPF:"))
             input('Pressione ENTER para continuar\n')
